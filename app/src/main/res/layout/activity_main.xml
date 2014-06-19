@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/tecz1" />
+        android:src="@drawable/mojeoko" />
 
     <LinearLayout
         android:orientation="vertical"

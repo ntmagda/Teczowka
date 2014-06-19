@@ -8,7 +8,7 @@ import android.graphics.Color;
  */
 public class Binarization {
 
-    public Bitmap Binarize(Bitmap src, String IrisOrPupil) {
+    public static Bitmap process(Bitmap src, String IrisOrPupil) {
         Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
         int height = src.getHeight();
         int width = src.getWidth();

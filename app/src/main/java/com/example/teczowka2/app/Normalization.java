@@ -7,7 +7,7 @@ import android.graphics.Color;
  * Created by Magda on 2014-06-19.
  */
 public class Normalization {
-    public static Bitmap doIt(Bitmap im, int x0, int y0, int r_min, int r_max) {
+    public static Bitmap process(Bitmap im, int x0, int y0, int r_min, int r_max) {
         final int width = 360;
         final int height = r_max - r_min;
         if (height <= 0 || x0 < 0 || y0 < 0 || x0 >= im.getWidth() || y0 >= im.getHeight()) {
@@ -29,7 +29,7 @@ public class Normalization {
                     int R = Color.red(pixel);
                     int G = Color.green(pixel);
                     int B = Color.blue(pixel);
-                    ret.setPixel((int) i ,(int) j,Color.argb(A,R,G,B));
+                    ret.setPixel((int) i, (int) j, Color.argb(A, R, G, B));
                 } catch (java.lang.ArrayIndexOutOfBoundsException e) {
                 }
             }

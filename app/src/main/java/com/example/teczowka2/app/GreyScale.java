@@ -8,7 +8,7 @@ import android.graphics.Color;
  */
 public class GreyScale {
 
-    public Bitmap Grey(Bitmap src) {
+    public static Bitmap process(Bitmap src) {
         Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
         int height = src.getHeight();
         int width = src.getWidth();

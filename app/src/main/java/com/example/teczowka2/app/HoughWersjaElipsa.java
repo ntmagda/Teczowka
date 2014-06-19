@@ -2,19 +2,16 @@ package com.example.teczowka2.app;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Point;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+
 public class HoughWersjaElipsa {
 
-    public  Circle H(Bitmap src,Bitmap original, int amin, int amax) {
+    public Circle H(Bitmap src, int amin, int amax) {
 
         int aMin = amin;
         int aMax = amax;
         Bitmap bmOut = src;
-        Bitmap bmOut1 = original;
         int maxVotes=0;
         Circle bestCircle = null;
         int height = src.getHeight();
@@ -86,7 +83,7 @@ public class HoughWersjaElipsa {
             }
         }
 
-        Bitmap bmOut1 = Normalization.doIt(bmOut,Iris.getX0(),Iris.getY0(),Pupil.getR(),Iris.getR());
+        Bitmap bmOut1 = Normalization.process(bmOut, Iris.getX0(), Iris.getY0(), Pupil.getR(), Iris.getR());
         Bitmap[] bitmaps = new Bitmap[2];
         bitmaps[0] = bmOut;
         bitmaps[1] = bmOut1;

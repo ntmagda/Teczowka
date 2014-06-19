@@ -5,7 +5,7 @@ import android.graphics.Color;
 
 public class Sobel {
 
-    public Bitmap Sobel(Bitmap src) {
+    public static Bitmap process(Bitmap src) {
         // create new bitmap with the same settings as source bitmap
         Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
         // image size

@@ -76,7 +76,7 @@ public class HoughDraw {
         //return bmOut1;
     }
 
-    public Bitmap IrisBow(Bitmap bmOut, Circle Pupil,Circle Iris)
+    public static Bitmap IrisBow(Bitmap bmOut, Circle Pupil,Circle Iris)
     {
         int width = bmOut.getWidth();
         int height = bmOut.getHeight();
