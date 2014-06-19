@@ -11,7 +11,7 @@
 
     <ImageView
         android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:id="@+id/oko"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -23,10 +23,10 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"
-        android:layout_alignBottom="@+id/oko"
         android:id="@+id/a"
         android:layout_alignParentEnd="true"
-        android:focusableInTouchMode="false"></LinearLayout>
+        android:focusableInTouchMode="false"
+        android:layout_alignBottom="@+id/oko"></LinearLayout>
 
     <Button
         android:layout_width="110dp"
@@ -53,4 +53,19 @@
         android:layout_alignTop="@+id/camera"
         android:layout_toRightOf="@+id/camera"
         android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/oko"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/gallery">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/normalized" />
+    </LinearLayout>
 </RelativeLayout>

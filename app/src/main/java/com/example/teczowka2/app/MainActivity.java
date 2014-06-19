@@ -2,6 +2,7 @@ package com.example.teczowka2.app;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class MainActivity extends ActionBarActivity {
 
     Bitmap original;
     ImageView iv;
+    ImageView ivNorm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +34,12 @@ public class MainActivity extends ActionBarActivity {
         if (resultCode == RESULT_OK) {
             if (requestCode == 1) {
                 ImageView oko = (ImageView) findViewById(R.id.oko);
+//                int reqWidth=200;
+//                int reqHeigth=200;
+//                Bitmap okobit = CompressImage.decodeSampledBitmapFromResource(getResources(),R.drawable.tecz1,reqWidth,reqHeigth);
                 oko.setImageURI(data.getData()); // pobranie z galerii
                 Bitmap okobit = ((BitmapDrawable) oko.getDrawable()).getBitmap();
-                original = ((BitmapDrawable) oko.getDrawable()).getBitmap();
+                original =((BitmapDrawable) oko.getDrawable()).getBitmap();
                 ImageView iv = (ImageView) findViewById(R.id.oko);
                 iv.setImageBitmap(okobit);
 
@@ -43,7 +48,8 @@ public class MainActivity extends ActionBarActivity {
                 if (requestCode == 2) {
                     Bundle extras = data.getExtras();
                     Bitmap oko = (Bitmap) extras.get("data");
-                    original = (Bitmap) extras.get("data");
+                    oko = Bitmap.createScaledBitmap(oko, 160, 160, true);
+                    original = Bitmap.createScaledBitmap(oko, 160, 160, true);
                     ImageView iv = (ImageView) findViewById(R.id.oko);
                     iv.setImageBitmap(oko);
                    }
@@ -54,9 +60,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-
-
         iv = (ImageView) findViewById(R.id.oko);
+        ivNorm = (ImageView) findViewById(R.id.normalized);
         original = ((BitmapDrawable) iv.getDrawable()).getBitmap();
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
@@ -85,9 +90,21 @@ public class MainActivity extends ActionBarActivity {
                 Bitmap sobelIris = sobeltemp.Sobel(BinarizationIris);
                 Circle pupil = hough.H(sobelPupil, grey,30,70);
                 Circle iris = hough.H(sobelIris, grey, 40, 70 );
-                Bitmap IRISBOW = hough.IrisBow(grey,pupil,iris);
-                iv.setImageBitmap(IRISBOW);
-                break;
+                Bitmap[] IRISBOW = hough.IrisBow(grey,pupil,iris);
+                iv.setImageBitmap(IRISBOW[0]);
+                ivNorm.setImageBitmap(IRISBOW[1]);
+                break;/*
+            case R.id.drawIrisBow:
+                HoughDraw hough1 = new HoughDraw();
+                Bitmap grey1 = greytemp.Grey(original);
+                Bitmap BinarizationPupil1 = binarizationtemp.Binarize(grey1,"Pupil");
+                Bitmap BinarizationIris1 = binarizationtemp.Binarize(grey1,"Iris");
+                Bitmap sobelPupil1 = sobeltemp.Sobel(BinarizationPupil1);
+                Bitmap sobelIris1 = sobeltemp.Sobel(BinarizationIris1);
+                Bitmap pupil1 = hough1.H(sobelPupil1, grey1,20,70);
+                Bitmap iris1 = hough1.H(sobelIris1, grey1, 40, 70 );
+                iv.setImageBitmap(pupil1);
+                break;*/
             case R.id.exit:
                 System.exit(0);
                 break;

@@ -14,6 +14,13 @@
         android:layout_width="match_parent">
     </item>
     <item
+        android:id="@+id/drawIrisBow"
+        android:orderInCategory="2"
+        android:title ="DRAW"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    </item>
+    <item
         android:id="@+id/exit"
         android:orderInCategory="2"
         android:title ="@string/exit"

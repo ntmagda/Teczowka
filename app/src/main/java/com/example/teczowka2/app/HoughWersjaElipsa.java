@@ -70,13 +70,10 @@ public class HoughWersjaElipsa {
                 }
             }
         }
-            //drawCircle(bestCircle, bmOut);
-            //removeRest(bestCircle,bmOut1);
             return bestCircle;
-        //return bmOut1;
         }
 
-    public Bitmap IrisBow(Bitmap bmOut, Circle Pupil,Circle Iris)
+    public Bitmap[] IrisBow(Bitmap bmOut, Circle Pupil,Circle Iris)
     {
         int width = bmOut.getWidth();
         int height = bmOut.getHeight();
@@ -89,8 +86,11 @@ public class HoughWersjaElipsa {
             }
         }
 
-        return bmOut;
-
+        Bitmap bmOut1 = Normalization.doIt(bmOut,Iris.getX0(),Iris.getY0(),Pupil.getR(),Iris.getR());
+        Bitmap[] bitmaps = new Bitmap[2];
+        bitmaps[0] = bmOut;
+        bitmaps[1] = bmOut1;
+        return bitmaps;
     }
 
     public int max(int [] tab){
