@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TECZOWKA</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="original">Original Image</string>
+    <string name="sobelP">Pupil Sobel</string>
+    <string name="sobelI">Iris Sobel</string>
+    <string name="grey">Grey</string>
+    <string name="binarizationP">Pupil Binarization</string>
+    <string name="binarizationI">Iris Binarization</string>
+    <string name="findI">Find Iris</string>
+    <string name="findP">Find Pupil</string>
+    <string name="findIris">Find Iris</string>
+    <string name="findPupil">Find Pupil</string>
+    <string name="findCircleIris">Draw Iris Circle</string>
+    <string name="findIrisBow">Find Iris Bow</string>
+    <string name="exit">Exit</string>
+
+</resources>

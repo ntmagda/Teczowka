@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/original"
+        android:orderInCategory="2"
+        android:title ="@string/original"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    </item>
+    <item
+        android:id="@+id/findIrisBow"
+        android:orderInCategory="2"
+        android:title ="@string/findIrisBow"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    </item>
+    <item
+        android:id="@+id/exit"
+        android:orderInCategory="2"
+        android:title ="@string/exit"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    </item>
+
+</menu>
